@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NK CNC Solution</title>
+<meta name="description" content="CNC tools, spares and machines, sold and serviced in Bengaluru.">
+<link rel="icon" href="assets/nk-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="NK CNC Solution home">
+      <img class="logo" alt="NK CNC Tools" src="assets/nk-logo.png" width="108" height="42">
+      <span><b>NK CNC Solution</b><small>Horumavu · Bengaluru</small></span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#products">Shop</a>
+      <a href="#machines">Machines</a>
+      <a href="#service">Service</a>
+      <a href="#about">Contact</a>
+    </nav>
+    <button class="btn cartbtn" id="openCart" type="button" aria-label="Open cart">Cart <span class="count" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<div class="notice"><div class="wrap"><b>Preview.</b><span>Prices come from your price lists. Product photos are coming, so cards show a placeholder. Orders and requests are not sent anywhere yet.</span></div></div>
+
+<main id="top" class="wrap">
+  <div class="hero">
+    <div>
+      <span class="label">Wholesale · Retail · Service · Since 2024</span>
+      <h1>CNC tools and spares, <em>sold and serviced</em> in Bengaluru.</h1>
+      <p class="lead">End mills, ball nose and engraving bits, spindles, controllers, servo drives and spare parts, plus laser cutting, CNC router and laminating machines on request.</p>
+      <div class="cta">
+        <a class="btn" href="#products">Shop tools &amp; spares</a>
+        <a class="btn ghost" href="#service">Book a service</a>
+      </div>
+    </div>
+    <div class="plate" aria-label="Company details">
+      <span class="label">Company data plate</span>
+      <dl>
+        <dt>Firm</dt><dd>NK CNC Solution</dd>
+        <dt>Address</dt><dd>No. 260, Shop 1, Hormavu Main Road, Kalkere, Bengaluru 560043, Karnataka</dd>
+        <dt>Phone</dt><dd>8553696512, 8296262344</dd>
+        <dt>Email</dt><dd>nkcncsolutions@gmail.com</dd>
+        <dt>Trade</dt><dd>Manufacturer, exporter, importer, wholesaler, retailer, trader, service provider</dd>
+      </dl>
+    </div>
+  </div>
+
+  <section id="products">
+    <div class="head">
+      <div><span class="label">Catalogue</span><h2>Tools &amp; spares</h2><p>Pick a size or variant on each card, then add it to the cart. The tool price list asks for a minimum order of ₹2,000.</p></div>
+    </div>
+    <div class="tools">
+      <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+      <input class="field" id="search" type="search" placeholder="Search, e.g. 6*25*50 or ER32" aria-label="Search products">
+    </div>
+    <div class="meta" id="meta"></div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="none" hidden>No products match that search.</p>
+  </section>
+
+  <section id="machines">
+    <div class="head"><div><span class="label">Machines</span><h2>Machines on request</h2><p>Priced per configuration, so ask for a quote and we will call you back.</p></div></div>
+    <div class="mach">
+      <div><h3>Laser cutting machines</h3><p>Fibre and CO2 laser cutters and engravers for sheet metal, acrylic, wood and more.</p><a class="btn ghost" href="#service" data-quote="Laser cutting machine">Request a quote</a></div>
+      <div><h3>CNC router machines</h3><p>Wood, acrylic, aluminium and composite routers, with automatic tool change options.</p><a class="btn ghost" href="#service" data-quote="CNC router">Request a quote</a></div>
+      <div><h3>Laminating machines</h3><p>Roll and pouch laminators for print shops, signage and offices.</p><a class="btn ghost" href="#service" data-quote="Laminating machine">Request a quote</a></div>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="split">
+      <div>
+        <span class="label">Service desk</span>
+        <h2 style="font-size:clamp(30px,4vw,44px);text-transform:uppercase;margin:10px 0 12px">Book a service or request a quote</h2>
+        <p style="color:var(--muted)">For machines bought from us or anywhere else. Tell us what the machine is doing and when we can visit, or what machine you want a price for.</p>
+        <ul class="list">
+          <li><span class="tick">A</span><div><b>Installation &amp; commissioning</b><span>Setup, alignment and operator handover.</span></div></li>
+          <li><span class="tick">B</span><div><b>Repair &amp; breakdown</b><span>Spindle, drives, controller and electrical faults.</span></div></li>
+          <li><span class="tick">C</span><div><b>Preventive maintenance</b><span>Cleaning, lubrication, bearing and belt checks.</span></div></li>
+          <li><span class="tick">D</span><div><b>Training &amp; spare parts</b><span>Operator training and parts on request.</span></div></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <form id="svcForm" novalidate>
+          <div class="row">
+            <label>Request type
+              <select class="field" id="svcType">
+                <option>Installation &amp; commissioning</option>
+                <option>Repair &amp; breakdown</option>
+                <option>Preventive maintenance</option>
+                <option>Operator training</option>
+                <option>Spare parts request</option>
+                <option>Machine quote</option>
+              </select>
+            </label>
+            <label>Machine
+              <select class="field" id="svcMachine">
+                <option>Laser cutting machine</option>
+                <option>CNC router</option>
+                <option>Laminating machine</option>
+                <option>Other equipment</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label>Your name<input class="field" id="svcName" autocomplete="name"><span class="err" id="svcNameErr"></span></label>
+            <label>Phone<input class="field" id="svcPhone" type="tel" autocomplete="tel" inputmode="tel"><span class="err" id="svcPhoneErr"></span></label>
+          </div>
+          <div class="row">
+            <label>Email (optional)<input class="field" id="svcEmail" type="email" autocomplete="email"></label>
+            <label>Preferred date<input class="field" id="svcDate" type="date"></label>
+          </div>
+          <label>Site address<input class="field" id="svcAddr" autocomplete="street-address" placeholder="Unit, area, city"></label>
+          <label>Details<textarea class="field" id="svcNote" placeholder="Machine make and model, fault codes, or the machine you want quoted"></textarea></label>
+          <button class="btn" type="submit">Send request</button>
+        </form>
+        <div id="svcDone" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="head"><div><span class="label">Contact</span><h2>Visit or call</h2></div></div>
+    <div class="facts">
+      <div><span class="label">Address</span><b>No. 260, Shop 1, Hormavu Main Road, Kalkere, Bengaluru 560043</b></div>
+      <div><span class="label">Phone</span><b>8553696512<br>8296262344</b></div>
+      <div><span class="label">Email</span><b style="text-transform:none">nkcncsolutions@gmail.com</b></div>
+      <div><span class="label">Trade</span><b>Wholesale · Retail · Export · Import · Service</b></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>NK CNC Solution · Horumavu, Bengaluru, Karnataka · Established 2024</span>
+    <span>Prices in INR as per the current price list. GST and delivery are confirmed when your order is accepted.</span>
+  </footer>
+</main>
+
+<div id="layer" hidden>
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <div class="dh"><h2 id="dTitle">Your cart</h2><button class="x" id="closeCart" type="button" aria-label="Close cart">×</button></div>
+    <div id="dBody" class="db"></div>
+    <div id="dFoot" class="df"></div>
+  </aside>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
